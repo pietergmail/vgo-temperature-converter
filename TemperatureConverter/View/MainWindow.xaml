@@ -7,8 +7,9 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <StackPanel>
-        <TextBox x:Name="textBox" />
+        <TextBox x:Name="FahrenheitText" />
         <Button Content="Convert to Celsius" Click="ConvertToCelsius"/>
+        <TextBox x:Name="CelsiusText" />
         <Button Content="Convert to Fahrenheit" Click="ConvertTofahrenheit"/>
     </StackPanel>
 </Window>
