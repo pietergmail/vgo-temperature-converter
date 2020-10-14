@@ -32,12 +32,15 @@ namespace View
             var cel = (fahr - 32) / 1.8;
             var strcel = cel.ToString();
             textBox.Text = strcel;
+        }
 
-            /*var fahrenheitString = textBox.Text;
-            var fahrenheit = double.Parse(fahrenheitString);
-            var celsius = (fahrenheit - 32) / 1.8;
-            var celsiusString = celsius.ToString();
-            textBox.Text = celsiusString;*/
+        private void ConvertTofahrenheit(object sender, RoutedEventArgs e)
+        {
+            var strcel = textBox.Text;
+            var cel = double.Parse(strcel);
+            var fahr = (cel * 1.8) + 32;
+            var strfahr = fahr.ToString();
+            textBox.Text = strfahr;
         }
     }
 }
