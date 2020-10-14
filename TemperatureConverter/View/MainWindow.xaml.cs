@@ -27,13 +27,17 @@ namespace View
 
         private void ConvertToCelsius(object sender, RoutedEventArgs e)
         {
-            String str = textBox.Text;
-            Console.Write(str);
-            var far = double.Parse(str);
-            var cel = (far - 32) * (5 / 9);
-            str = cel.ToString();
-            Console.Write(cel);
-            textBox.Text = str;
+            var strfahr = textBox.Text;
+            var fahr = double.Parse(strfahr);
+            var cel = (fahr - 32) / 1.8;
+            var strcel = cel.ToString();
+            textBox.Text = strcel;
+
+            /*var fahrenheitString = textBox.Text;
+            var fahrenheit = double.Parse(fahrenheitString);
+            var celsius = (fahrenheit - 32) / 1.8;
+            var celsiusString = celsius.ToString();
+            textBox.Text = celsiusString;*/
         }
     }
 }
