@@ -31,7 +31,7 @@ namespace View
             var fahr = double.Parse(strfahr);
             var cel = (fahr - 32) / 1.8;
             var strcel = cel.ToString();
-            FahrenheitText.Text = strcel;
+            CelsiusText.Text = strcel;
         }
 
         private void ConvertTofahrenheit(object sender, RoutedEventArgs e)
@@ -40,7 +40,7 @@ namespace View
             var cel = double.Parse(strcel);
             var fahr = (cel * 1.8) + 32;
             var strfahr = fahr.ToString();
-            CelsiusText.Text = strfahr;
+            FahrenheitText.Text = strfahr;
         }
     }
 }
