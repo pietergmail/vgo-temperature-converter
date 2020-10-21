@@ -25,7 +25,27 @@ namespace View
             InitializeComponent();
         }
 
-        private void ConvertToCelsius(object sender, RoutedEventArgs e)
+        private void ConvertCelsius(object sender, RoutedEventArgs e)
+        {
+            CelsiusToFahrenheit(sender, e);
+            CelsiusToKelvin(sender, e);
+        }
+
+        protected void ConvertFahrenheit(object sender, RoutedEventArgs e)
+        {
+            FahrenheitToCelsius(sender, e);
+            CelsiusToKelvin(sender, e);
+        }
+
+        protected void ConvertKelvin(object sender, RoutedEventArgs e)
+        {
+            KelvinToCelsius(sender, e);
+            CelsiusToFahrenheit(sender, e);
+        }
+
+
+
+        private void FahrenheitToCelsius(object sender, RoutedEventArgs e)
         {
             var strfahr = FahrenheitText.Text;
             var fahr = double.Parse(strfahr);
@@ -34,13 +54,31 @@ namespace View
             CelsiusText.Text = strcel;
         }
 
-        private void ConvertTofahrenheit(object sender, RoutedEventArgs e)
+        private void CelsiusToFahrenheit(object sender, RoutedEventArgs e)
         {
             var strcel = CelsiusText.Text;
             var cel = double.Parse(strcel);
             var fahr = (cel * 1.8) + 32;
             var strfahr = fahr.ToString();
             FahrenheitText.Text = strfahr;
+        }
+
+        private void CelsiusToKelvin(object sender, RoutedEventArgs e) 
+        {
+            var strcel = CelsiusText.Text;
+            var cel = double.Parse(strcel);
+            var Kel = cel + 273.15;
+            var strKel = Kel.ToString();
+            KelvinText.Text = strKel;
+        }
+
+        private void KelvinToCelsius(object sender, RoutedEventArgs e)
+        {
+            var strkel = KelvinText.Text;
+            var kel = double.Parse(strkel);
+            var cel = kel - 273.15;
+            var strcel = cel.ToString();
+            CelsiusText.Text = strcel;
         }
     }
 }

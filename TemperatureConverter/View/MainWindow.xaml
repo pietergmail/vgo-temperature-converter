@@ -19,11 +19,28 @@
         </Style>
     </Window.Resources>
     <StackPanel>
-        <TextBlock Text="Celsius" Style="{StaticResource labelStyle}"/>
-        <TextBox x:Name="CelsiusText" FontSize="16"/>
-        <Button Content="Convert to Celsius" Click="ConvertToCelsius"/>
-        <TextBlock Text="Fahrenheit" Style="{StaticResource labelStyle}"/>
-        <TextBox x:Name="FahrenheitText" FontSize="16"/>
-        <Button Content="Convert to Fahrenheit" Click="ConvertTofahrenheit" />
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Text="Celsius" Style="{StaticResource labelStyle}" />
+            <TextBox Grid.Row="1" x:Name="CelsiusText" />
+            <Button Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" Content="Convert Celsius" Click="ConvertCelsius"/>
+            <TextBlock Grid.Row="2" Text="Fahrenheit" Style="{StaticResource labelStyle}"/>
+            <TextBox Grid.Row="3" x:Name="FahrenheitText"/>
+            <Button Grid.Row="2" Grid.RowSpan="2" Grid.Column="1" Content="Convert Fahrenheit" Click="ConvertFahrenheit" />
+            <TextBlock Grid.Row="4" Text="Kelvin" Style="{StaticResource labelStyle}"/>
+            <TextBox Grid.Row="5" x:Name="KelvinText"/>
+            <Button Grid.Row="4" Grid.RowSpan="2" Grid.Column="1" Content="Convert Kelvin" Click="ConvertKelvin" />
+        </Grid>
     </StackPanel>
 </Window>
