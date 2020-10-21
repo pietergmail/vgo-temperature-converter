@@ -42,5 +42,6 @@
             <TextBox Grid.Row="5" x:Name="KelvinText"/>
             <Button Grid.Row="4" Grid.RowSpan="2" Grid.Column="1" Content="Convert Kelvin" Click="ConvertKelvin" />
         </Grid>
+        <Slider x:Name="slider" Minimum="0" Maximum="1000" ValueChanged="SliderValueChanged" />
     </StackPanel>
 </Window>
